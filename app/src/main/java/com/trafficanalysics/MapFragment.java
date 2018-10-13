@@ -38,9 +38,8 @@ public class MapFragment extends Fragment {
         webview.setWebChromeClient(new WebChromeClient());
         //webview.setWebViewClient(new WebViewClient());
         webview.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webview.loadUrl("https://www.google.com/maps/@10.7756514,106.6673812,16z");
+        webview.loadUrl("https://www.google.com/maps/d/u/0/viewer?mid=1D5mU8Xb00hAH67JBT6y-KYEXyJbXifPR&ll=10.777824951677136%2C106.68820279988381&z=14");
         return view;
-
     }
 //    @Override
 //    public void onBackPressed() {
