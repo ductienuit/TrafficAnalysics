@@ -37,3 +37,4 @@ out/
 vids/
 
 exported-data/
+__pycache__/
