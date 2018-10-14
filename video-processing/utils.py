@@ -1,3 +1,7 @@
+"""
+Helpful functions
+"""
+
 import cv2
 import logging
 import logging.handlers

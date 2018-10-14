@@ -27,9 +27,10 @@ VIDEO_SOURCE = "./vids/video5.avi"
 REPORT_DES = './'
 SHAPE = (720, 1280)  # HxW
 EXIT_PTS = np.array([
-    # [[732, 720], [732, 590], [1280, 500], [1280, 720]],
-    [[645, 720], [645, 0], [1280, 0], [1280, 720]],
-    [[0, 400], [645, 400], [645, 0], [0, 0]]
+    [[732, 720], [732, 590], [1280, 500], [1280, 720]],                 
+    [[0, 720], [645, 720], [645, 0], [0, 0]]                            
+    # [[645, 720], [645, 0], [1280, 0], [1280, 720]],
+    # [[0, 400], [645, 400], [645, 0], [0, 0]]
 ])
 # ============================================================================
 
@@ -59,7 +60,7 @@ def main():
     bg_subtractor = cv2.createBackgroundSubtractorMOG2(
         history=500, detectShadows=True)
 
-    # processing pipline for programming conviniance
+    # processing pipeline for convenience programming
     pipeline = PipelineRunner(pipeline=[
         ContourDetection(bg_subtractor=bg_subtractor,
                          save_image=True, image_dir=IMAGE_DIR),
@@ -93,10 +94,6 @@ def main():
         # frame number that will be passed to pipline
         # this needed to make video from cutted frames
         frame_number += 1
-
-        # plt.imshow(frame)
-        # plt.show()
-        # return
 
         pipeline.set_context({
             'frame': frame,

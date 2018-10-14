@@ -1,3 +1,7 @@
+"""
+Pipeline is used for counting vehicles appears in video"
+"""
+
 import os
 import logging
 import csv
