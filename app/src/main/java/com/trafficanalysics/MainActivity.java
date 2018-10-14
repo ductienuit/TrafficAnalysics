@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ActionBar toolbar;
     FrameLayout contentContainer;
+    ChatbotFragment chatbot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
                         toolbar.setTitle("Traffic Message");
-                        loadFragment(new ChatbotFragment());
+                        chatbot = ChatbotFragment.getmInstance();
+                        loadFragment(chatbot);
                         break;
                     case 2:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
