@@ -3,7 +3,6 @@ package com.trafficanalysics;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationItem mapItem = new BottomNavigationItem
                 ("Bản đồ", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_maps);
         BottomNavigationItem audioItem = new BottomNavigationItem
-                ("Voice", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_record_voice_over);
+                ("Voice", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_radio);
 
         bottomNavigationView.addTab(newItem);
         bottomNavigationView.addTab(channelItem);
