@@ -74,19 +74,24 @@ public class MainActivity extends AppCompatActivity {
                 switch (index) {
                     case 0:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
-                        toolbar.setTitle("News");
+                        toolbar.setTitle("Tíc Tíc");
                         loadFragment(new NewsFragment());
                         break;
                     case 1:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
-                        toolbar.setTitle("Traffic Message");
+                        toolbar.setTitle("Chatbot");
                         chatbot = ChatbotFragment.getmInstance();
                         loadFragment(chatbot);
                         break;
                     case 2:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
-                        toolbar.setTitle("Map Traffic");
+                        toolbar.setTitle("Bản đồ");
                         loadFragment(new MapFragment());
+                        break;
+                    case 3:
+                        TransitionManager.beginDelayedTransition(contentContainer, set);
+                        toolbar.setTitle("Voice");
+                        loadFragment(new VoiceFragment());
                         break;
                 }
             }
@@ -94,15 +99,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addNavItem() {
-        BottomNavigationItem dateItem = new BottomNavigationItem
-                ("News", ContextCompat.getColor(this, R.color.colorAccent), R.drawable.ic_news);
-        BottomNavigationItem channelItem = new BottomNavigationItem
-                ("Traffic Message", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_messages);
         BottomNavigationItem newItem = new BottomNavigationItem
-                ("Map Traffic", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_maps);
+                ("Tíc Tíc", ContextCompat.getColor(this, R.color.colorAccent), R.drawable.ic_news);
+        BottomNavigationItem channelItem = new BottomNavigationItem
+                ("Chatbot", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_messages);
+        BottomNavigationItem mapItem = new BottomNavigationItem
+                ("Bản đồ", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_maps);
+        BottomNavigationItem audioItem = new BottomNavigationItem
+                ("Voice", ContextCompat.getColor(this, R.color.colorPrimary), R.drawable.ic_record_voice_over);
 
-        bottomNavigationView.addTab(dateItem);
-        bottomNavigationView.addTab(channelItem);
         bottomNavigationView.addTab(newItem);
+        bottomNavigationView.addTab(channelItem);
+        bottomNavigationView.addTab(mapItem);
+        bottomNavigationView.addTab(audioItem);
     }
 }
