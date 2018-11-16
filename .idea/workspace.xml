@@ -10,19 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6375849a-e489-44cc-93f1-84bacebab9bd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/VoiceFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/VoiceFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_record_voice_over.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_record_voice_over.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_record_voice_over.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_record_voice_over.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_record_voice_over.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_voice.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_voice.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,8 +51,8 @@
       <file leaf-file-name="VoiceFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/VoiceFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+            <state relative-caret-position="251">
+              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
               <folding>
                 <element signature="e#987#1335#0" expanded="true" />
                 <element signature="e#1334#1335#0" expanded="true" />
@@ -2368,7 +2356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542360862636</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add ripple button record and radio">
+      <created>1542384458399</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542384458399</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2439,7 +2434,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add voice fragment" />
-    <option name="LAST_COMMIT_MESSAGE" value="add voice fragment" />
+    <MESSAGE value="add ripple button record and radio" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ripple button record and radio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2524,8 +2520,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/VoiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        <state relative-caret-position="251">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
           <folding>
             <element signature="e#987#1335#0" expanded="true" />
             <element signature="e#1334#1335#0" expanded="true" />
