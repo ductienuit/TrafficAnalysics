@@ -1,8 +1,12 @@
 package com.trafficanalysics;
 
 
+import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +33,16 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 import com.skyfishjy.library.RippleBackground;
 
+import java.io.IOException;
+
+import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder;
+import cafe.adriel.androidaudiorecorder.model.AudioChannel;
+import cafe.adriel.androidaudiorecorder.model.AudioSampleRate;
+import cafe.adriel.androidaudiorecorder.model.AudioSource;
+
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_OK;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +54,8 @@ public class VoiceFragment extends Fragment {
     SimpleExoPlayer player;
     DataSource.Factory dataSourceFactory;
     MediaSource mediaSource;
+
+    String filePath;
 
     BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
     private  ExtractorsFactory extractorsFactory= new DefaultExtractorsFactory();
@@ -85,12 +101,11 @@ public class VoiceFragment extends Fragment {
             public void onClick(View view) {
                 boolean check = rippleRecord.isRippleAnimationRunning();
                 if(check){
-                    rippleRecord.stopRippleAnimation();
-                    player.setPlayWhenReady(false);
+                    //rippleRecord.stopRippleAnimation();
                 }
                 else {
                     rippleRecord.startRippleAnimation();
-                    player.setPlayWhenReady(true);
+                    record();
                 }
 
             }
@@ -106,5 +121,68 @@ public class VoiceFragment extends Fragment {
                 dataSourceFactory, null, null);
         player = ExoPlayerFactory.newSimpleInstance( getContext(), trackSelector);
         player.prepare(mediaSource);
+    }
+
+    void record()
+    {
+        filePath = Environment.getExternalStorageDirectory() + "/recorded_audio.wav";
+        int color = getResources().getColor(R.color.colorPrimaryDark);
+        int requestCode = 0;
+        AndroidAudioRecorder.with(this)
+                // Required
+                .setFilePath(filePath)
+                .setColor(color)
+                .setRequestCode(requestCode)
+
+                // Optional
+                .setSource(AudioSource.MIC)
+                .setChannel(AudioChannel.STEREO)
+                .setSampleRate(AudioSampleRate.HZ_48000)
+                .setAutoStart(true)
+                .setKeepDisplayOn(true)
+
+                // Start recording
+                .recordFromFragment();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+
+                thanksAudio();
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // Oops! User has canceled the recording
+                rippleRecord.stopRippleAnimation();
+            }
+        }
+    }
+    void thanksAudio(){
+        AssetFileDescriptor afd = null;
+        try {
+            afd = getContext().getAssets().openFd("thanks.mp3");
+            MediaPlayer playerThanks = new MediaPlayer();
+            playerThanks.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+            playerThanks.prepare();
+            playerThanks.start();
+            playerThanks.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    rippleRecord.stopRippleAnimation();
+                }
+            });
+            playerThanks.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                @Override
+                public boolean onError(MediaPlayer mediaPlayer, int i, int i1) {
+                    rippleRecord.stopRippleAnimation();
+                    return false;
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
