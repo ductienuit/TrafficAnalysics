@@ -94,7 +94,9 @@ public class ChatbotFragment extends Fragment {
         final Message receivedMessage = new Message.Builder()
                 .setUser(you)
                 .setRight(false)
-                .setText("Tôi là Tít tít đến từ AI Traffic Analysis. Muốn biết tình trạng giao thông hãy nhập: traffic <yourstreet>")
+                .setText("Tôi là Tít tít đến từ AI Traffic Analysis. " +
+                        "\nMuốn biết tình trạng giao thông hãy nhập: traffic <Tên đường>" +
+                        "\nMuốn đóng góp thông tin hãy nhập: info <Tên đường> - <Tình trạng> ")
                 .build();
                 // This is a demo bot
                 // Return within 3 seconds
@@ -169,21 +171,48 @@ public class ChatbotFragment extends Fragment {
 
                 String low2question = question.toLowerCase();
 
-                if(low2question.contains("traffic le hong phong")||low2question.contains("traffic vo van ngan") ||
-                        low2question.contains("traffic mai chi tho"))
+                if(low2question.contains("traffic lê hồng phong")||low2question.contains("traffic võ văn ngân") ||
+                        low2question.contains("traffic mai chí thọ")||low2question.contains("traffic trường chinh")||
+                        low2question.contains("traffic công trường dân chủ")||low2question.contains("cảm ơn")||
+                        low2question.contains("info lê văn viêt-đang kẹt xe rất nặng")||low2question.contains("Ai không tốt nha")||
+                        low2question.contains("traffic ngã tư thủ đức"))
                 {
                     String result = "";
                     switch (low2question){
-                        case "traffic le hong phong":{
-                            result ="Traffic on Le Hong Phong : The street's clear, you can speed up a bit";
+                        case "traffic lê hồng phong":{
+                            result ="Tình hình giao thông đường Lê Hồng Phong hiện tại khá thông thoáng";
                             break;
                         }
-                        case "traffic vo van ngan":{
-                            result = "Vo Van Ngan street is being flooded right now. You could drive on Dang Van Bi instead or you can use bus number 8";
+                        case "traffic võ văn ngân":{
+                            result = "Tình hình giao thông đường Võ Văn Ngân hiện tại đang bị ùng tắc. Bạn có thể chuyển sang đi đường Đăng Văn Bi, hoặc đi xe buýt tuyến số 8";
                             break;
                         }
-                        case "traffic mai chi tho":{
-                            result ="Mai Chi Tho Avenue is being maintained right now. If you are driving, you could drive on Xa Lo Ha Noi alternatively";
+                        case "traffic mai chí thọ":{
+                            result ="Đại lô Mai Chí Thọ đang bị tắc mạnh. Nếu muốn bạn có thể đi Xa lô Hà Nội";
+                            break;
+                        }
+                        case "traffic trường chinh":{
+                            result="Tình hình giao thông đường Trường Chinh đang bị tắt nghẽ. Bạn nên đi xe buýt tuyên số 27 hoặc 04";
+                            break;
+                        }
+                        case "cảm ơn":{
+                            result="Tiền chứ, cảm ơn gì đâu ^.^";
+                            break;
+                        }
+                        case "traffic công trường dân chủ":{
+                            result="Tình hình giao thông tại đây đang ùng tắc rất nặng.";
+                            break;
+                        }
+                        case "info lê văn viêt-đang kẹt xe rất nặng":{
+                            result="Cảm ơn bạn đã đóng góp cho chúng tôi";
+                            break;
+                        }
+                        case "Ai không tốt nha":{
+                            result="Cảm ơn bạn đã góp ý, chúng tôi sẽ khắc phục sớm nhất";
+                            break;
+                        }
+                        case "traffic ngã tư thủ đức":{
+                            result="Ngã tư Thủ Đức hiện giao thông vẫn bình thường.";
                             break;
                         }
                     }
@@ -254,14 +283,30 @@ public class ChatbotFragment extends Fragment {
 
                         mChatView.receive(receivedMessage);
                     } else {
-                        //Receive message
-                        final Message receivedMessage = new Message.Builder()
-                                .setUser(you)
-                                .setRight(false)
-                                .setText("Sai rồi bạn ơi!!! Kiểm tra lại nào^^")
-                                .build();
+                        if (postResult != null && postResult.toString() == "Cảm ơn") {
+                            final Message receivedMessage = new Message.Builder()
+                                    .setUser(you)
+                                    .setRight(false)
+                                    .setText("Tiền thôi, cảm ơn gì ^.^")
+                                    .build();
+                        } else {
+                            if (postResult != null && postResult.toString() == "Ai không tốt nha") {
+                                final Message receivedMessage = new Message.Builder()
+                                        .setUser(you)
+                                        .setRight(false)
+                                        .setText("Cảm ơn bạn đã góp ý, chúng tôi sẽ khắc phục sớm nhất")
+                                        .build();
+                            } else {
+                                //Receive message
+                                final Message receivedMessage = new Message.Builder()
+                                        .setUser(you)
+                                        .setRight(false)
+                                        .setText("Sai rồi bạn ơi!!! Kiểm tra lại nào^^")
+                                        .build();
 
-                        mChatView.receive(receivedMessage);
+                                mChatView.receive(receivedMessage);
+                            }
+                        }
                     }
                 }catch (IndexOutOfBoundsException e){
                     //Receive message
