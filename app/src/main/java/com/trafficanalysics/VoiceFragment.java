@@ -1,10 +1,13 @@
 package com.trafficanalysics;
 
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -12,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -31,6 +35,12 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.skyfishjy.library.RippleBackground;
 
 import java.io.IOException;
@@ -100,17 +110,64 @@ public class VoiceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 boolean check = rippleRecord.isRippleAnimationRunning();
-                if(check){
-                    //rippleRecord.stopRippleAnimation();
-                }
-                else {
-                    rippleRecord.startRippleAnimation();
-                    record();
-                }
 
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                {
+                    askPermisstion();
+                }
+                else
+                {
+                    if(check){
+                        //rippleRecord.stopRippleAnimation();
+                    }
+                    else {
+                        rippleRecord.startRippleAnimation();
+                        record();
+                    }
+                }
             }
         });
         return view;
+    }
+
+    private void askPermisstion() {
+        Dexter.withActivity(getActivity())
+                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        Dexter.withActivity(getActivity())
+                                .withPermission(Manifest.permission.RECORD_AUDIO)
+                                .withListener(new PermissionListener() {
+                                    @Override
+                                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                                        rippleRecord.startRippleAnimation();
+                                        record();
+                                    }
+
+                                    @Override
+                                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                                        Toast.makeText(getContext(), "Không thể gửi thông tin nếu bạn không đồng ý cấp quyền", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    @Override
+                                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                                        /* ... */
+                                    }
+                                }).check();
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        Toast.makeText(getContext(), "Không thể gửi thông tin nếu bạn không đồng ý cấp quyền", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                        /* ... */
+                    }
+                }).check();
+
     }
 
     private void addExo() {
@@ -159,6 +216,7 @@ public class VoiceFragment extends Fragment {
             }
         }
     }
+
     void thanksAudio(){
         AssetFileDescriptor afd = null;
         try {
