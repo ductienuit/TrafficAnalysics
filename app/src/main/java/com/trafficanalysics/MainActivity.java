@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
                         toolbar.setTitle("Bản đồ");
-                        loadFragment(new MapFragment());
+                        loadFragment(new MapTrafficFragment());
                         break;
                     case 3:
                         TransitionManager.beginDelayedTransition(contentContainer, set);
