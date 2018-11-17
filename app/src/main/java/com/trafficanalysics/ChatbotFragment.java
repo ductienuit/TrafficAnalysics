@@ -94,7 +94,7 @@ public class ChatbotFragment extends Fragment {
         final Message receivedMessage = new Message.Builder()
                 .setUser(you)
                 .setRight(false)
-                .setText("I'm SuSi from AI Traffic Analysis. Search traffic: traffic yourstreet")
+                .setText("Tôi là Tít tít đến từ AI Traffic Analysis. Muốn biết tình trạng giao thông hãy nhập: traffic <yourstreet>")
                 .build();
                 // This is a demo bot
                 // Return within 3 seconds
@@ -114,11 +114,11 @@ public class ChatbotFragment extends Fragment {
         //User icon
         Bitmap myIcon = BitmapFactory.decodeResource(getResources(), R.drawable.face_2);
         //User name
-        String myName = "Duc Tien";
+        String myName = "Duc Anh";
 
         int yourId = 1;
         Bitmap yourIcon = BitmapFactory.decodeResource(getResources(), R.drawable.face_1);
-        String yourName = "Diana - AI 1";
+        String yourName = "Tít Tít";
 
         me = new User(myId, myName, myIcon);
         you = new User(yourId, yourName, yourIcon);
@@ -240,7 +240,7 @@ public class ChatbotFragment extends Fragment {
 
                         int yourId = 1;
                         Bitmap yourIcon = BitmapFactory.decodeResource(getResources(), R.drawable.face_1);
-                        String yourName = "Diana - AI 1";
+                        String yourName = "Tít Tít";
 
                         User you = new User(yourId, yourName, yourIcon);
                         //String answer = postResult.getAnswers()[0].getData()[0].getText();
@@ -258,7 +258,7 @@ public class ChatbotFragment extends Fragment {
                         final Message receivedMessage = new Message.Builder()
                                 .setUser(you)
                                 .setRight(false)
-                                .setText("What do you said ? I can't understand")
+                                .setText("Sai rồi bạn ơi!!! Kiểm tra lại nào^^")
                                 .build();
 
                         mChatView.receive(receivedMessage);
@@ -268,7 +268,7 @@ public class ChatbotFragment extends Fragment {
                     final Message receivedMessage = new Message.Builder()
                             .setUser(you)
                             .setRight(false)
-                            .setText("What do you said ? I don't understand. Are you kidding me ?")
+                            .setText("Tôi không hiểu bạn nói gì, kiểm tra lại nào^^ ?")
                             .build();
 
                     mChatView.receive(receivedMessage);
@@ -283,7 +283,7 @@ public class ChatbotFragment extends Fragment {
                 final Message receivedMessage = new Message.Builder()
                         .setUser(you)
                         .setRight(false)
-                        .setText("What do you said ? I can't understand")
+                        .setText("Kiểm tra lại giúp tôi ? Tôi không hiểu")
                         .build();
 
                 mChatView.receive(receivedMessage);

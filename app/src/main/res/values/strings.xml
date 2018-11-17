@@ -9,4 +9,14 @@
     <string name="alert_positive">Close</string>
     <string name="video">Video</string>
 
+    <string name="maps_api_key">AIzaSyDF-IV1MUqdJmUamq_Sxh6itWX186gl8kM</string>
+    <string name="search_map_km_unit">km</string>
+    <string name="search_map_1.5km">1.5</string>
+    <string name="search_map_3km">3</string>
+    <string name="search_map_5km">5</string>
+    <string name="search_map_10km">10</string>
+    <string name="search_map_30km">30</string>
+    <string name="search_map_allkm">ALL</string>
+    <string name="title_activity_maps">Map</string>
+
 </resources>
