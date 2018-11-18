@@ -176,7 +176,7 @@ public class ChatbotFragment extends Fragment {
                         low2question.contains("traffic công trường dân chủ")||low2question.contains("cảm ơn")||
                         low2question.contains("trafficjam hoàng diệu 2")||low2question.contains("trafficjam võ thị sáu")||
                         low2question.contains("traffic ngã tư thủ đức")||low2question.contains("traffic Vòng xoay Mỹ Thủy")||
-                        low2question.contains("không chính xác"))
+                        low2question.contains("không chính xác")||low2question.contains("chưa đúng"))
                 {
                     String result = "";
                     switch (low2question){
@@ -221,6 +221,10 @@ public class ChatbotFragment extends Fragment {
                             break;
                         }
                         case "không chính xác":{
+                            result="Cảm ơn phản hồi của bạn, chúng rôi sẽ khắc phục sớm nhất";
+                            break;
+                        }
+                        case "chưa đúng":{
                             result="Cảm ơn phản hồi của bạn, chúng rôi sẽ khắc phục sớm nhất";
                             break;
                         }
