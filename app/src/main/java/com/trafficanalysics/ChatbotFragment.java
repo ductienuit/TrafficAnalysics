@@ -96,7 +96,7 @@ public class ChatbotFragment extends Fragment {
                 .setRight(false)
                 .setText("Tôi là Tít tít đến từ AI Traffic Analysis. " +
                         "\nMuốn biết tình trạng giao thông hãy nhập: traffic <Tên đường>" +
-                        "\nMuốn đóng góp thông tin hãy nhập: info <Tên đường> - <Tình trạng> ")
+                        "\nMuốn đóng góp thông tin hãy nhập: trafficjam <Tên đường>")
                 .build();
                 // This is a demo bot
                 // Return within 3 seconds
@@ -174,8 +174,9 @@ public class ChatbotFragment extends Fragment {
                 if(low2question.contains("traffic lê hồng phong")||low2question.contains("traffic võ văn ngân") ||
                         low2question.contains("traffic mai chí thọ")||low2question.contains("traffic trường chinh")||
                         low2question.contains("traffic công trường dân chủ")||low2question.contains("cảm ơn")||
-                        low2question.contains("info lê văn viêt-đang kẹt xe rất nặng")||low2question.contains("Ai không tốt nha")||
-                        low2question.contains("traffic ngã tư thủ đức"))
+                        low2question.contains("trafficjam hoàng diệu 2")||low2question.contains("trafficjam võ thị sáu")||
+                        low2question.contains("traffic ngã tư thủ đức")||low2question.contains("traffic Vòng xoay Mỹ Thủy")||
+                        low2question.contains("không chính xác"))
                 {
                     String result = "";
                     switch (low2question){
@@ -203,16 +204,24 @@ public class ChatbotFragment extends Fragment {
                             result="Tình hình giao thông tại đây đang ùng tắc rất nặng.";
                             break;
                         }
-                        case "info lê văn viêt-đang kẹt xe rất nặng":{
-                            result="Cảm ơn bạn đã đóng góp cho chúng tôi";
-                            break;
-                        }
-                        case "Ai không tốt nha":{
-                            result="Cảm ơn bạn đã góp ý, chúng tôi sẽ khắc phục sớm nhất";
-                            break;
-                        }
                         case "traffic ngã tư thủ đức":{
                             result="Ngã tư Thủ Đức hiện giao thông vẫn bình thường.";
+                            break;
+                        }
+                        case"traffic Vòng xoay Mỹ Thủy":{
+                            result="Tình hình giao thông hiện tại lưu thông bình thường.";
+                            break;
+                        }
+                        case "trafficjam võ thị sáu":{
+                            result="Cảm ơn bạn đã đóng góp thông tin.";
+                            break;
+                        }
+                        case"trafficjam hoàng diệu 2":{
+                            result="Cảm ơn sự đóng góp của bạn!";
+                            break;
+                        }
+                        case "không chính xác":{
+                            result="Cảm ơn phản hồi của bạn, chúng rôi sẽ khắc phục sớm nhất";
                             break;
                         }
                     }
