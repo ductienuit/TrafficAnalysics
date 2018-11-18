@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MapFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MapFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="131" column="41" lean-forward="true" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+            <state relative-caret-position="-554">
+              <caret line="132" column="38" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatbotFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChatbotFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/ChatbotFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="177" column="45" selection-start-line="177" selection-start-column="45" selection-end-line="177" selection-end-column="45" />
+            <state relative-caret-position="476">
+              <caret line="203" column="83" lean-forward="true" selection-start-line="203" selection-start-column="83" selection-end-line="203" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3689#3875#0" expanded="true" />
@@ -2297,8 +2297,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MapsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/ChatbotFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MapFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/ChatbotFragment.java" />
       </list>
     </option>
   </component>
@@ -2346,7 +2346,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="UK457P89SGWSKBMJ" />
+    <property name="device.picker.selection" value="Nexus_5X_API_25" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Map_Test" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -2912,21 +2912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/ChatbotFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="177" column="45" selection-start-line="177" selection-start-column="45" selection-end-line="177" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3689#3875#0" expanded="true" />
-            <element signature="e#3874#3875#0" expanded="true" />
-            <element signature="e#5625#5672#0" expanded="true" />
-            <element signature="e#5984#10813#0" expanded="true" />
-            <element signature="e#10812#10813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/NewsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-931">
@@ -2936,10 +2921,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/MapFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="131" column="41" lean-forward="true" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+        <state relative-caret-position="-554">
+          <caret line="132" column="38" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/trafficanalysics/ChatbotFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="203" column="83" lean-forward="true" selection-start-line="203" selection-start-column="83" selection-end-line="203" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3689#3875#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#5625#5672#0" expanded="true" />
+            <element signature="e#5984#10813#0" expanded="true" />
+            <element signature="e#10812#10813#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -94,7 +94,7 @@ public class ChatbotFragment extends Fragment {
         final Message receivedMessage = new Message.Builder()
                 .setUser(you)
                 .setRight(false)
-                .setText("Tôi là Tít tít đến từ AI Traffic Analysis. " +
+                .setText("Tôi là Tíc tíc đến từ AI Traffic Analysis. " +
                         "\nMuốn biết tình trạng giao thông hãy nhập: traffic <Tên đường>" +
                         "\nMuốn đóng góp thông tin hãy nhập: trafficjam <Tên đường>")
                 .build();
@@ -120,7 +120,7 @@ public class ChatbotFragment extends Fragment {
 
         int yourId = 1;
         Bitmap yourIcon = BitmapFactory.decodeResource(getResources(), R.drawable.face_1);
-        String yourName = "Tít Tít";
+        String yourName = "Tíc Tíc";
 
         me = new User(myId, myName, myIcon);
         you = new User(yourId, yourName, yourIcon);
@@ -185,15 +185,15 @@ public class ChatbotFragment extends Fragment {
                             break;
                         }
                         case "traffic võ văn ngân":{
-                            result = "Tình hình giao thông đường Võ Văn Ngân hiện tại đang bị ùng tắc. Bạn có thể chuyển sang đi đường Đăng Văn Bi, hoặc đi xe buýt tuyến số 8";
+                            result = "Tình hình giao thông đường Võ Văn Ngân hiện tại đang bị ùn tắc. Bạn có thể chuyển sang đi đường Đăng Văn Bi, hoặc đi xe buýt tuyến số 8";
                             break;
                         }
                         case "traffic mai chí thọ":{
-                            result ="Đại lô Mai Chí Thọ đang bị tắc mạnh. Nếu muốn bạn có thể đi Xa lô Hà Nội";
+                            result ="Đại lộ Mai Chí Thọ đang bị tắc mạnh. Nếu muốn bạn có thể đi Xa lô Hà Nội";
                             break;
                         }
                         case "traffic trường chinh":{
-                            result="Tình hình giao thông đường Trường Chinh đang bị tắt nghẽ. Bạn nên đi xe buýt tuyên số 27 hoặc 04";
+                            result="Tình hình giao thông đường Trường Chinh đang bị tắc nghẽ. Bạn nên đi xe buýt tuyên số 27 hoặc 04";
                             break;
                         }
                         case "cảm ơn":{
@@ -201,7 +201,7 @@ public class ChatbotFragment extends Fragment {
                             break;
                         }
                         case "traffic công trường dân chủ":{
-                            result="Tình hình giao thông tại đây đang ùng tắc rất nặng.";
+                            result="Tình hình giao thông tại đây đang ùn tắc rất nặng.";
                             break;
                         }
                         case "traffic ngã tư thủ đức":{
@@ -278,7 +278,7 @@ public class ChatbotFragment extends Fragment {
 
                         int yourId = 1;
                         Bitmap yourIcon = BitmapFactory.decodeResource(getResources(), R.drawable.face_1);
-                        String yourName = "Tít Tít";
+                        String yourName = "Tíc Tíc";
 
                         User you = new User(yourId, yourName, yourIcon);
                         //String answer = postResult.getAnswers()[0].getData()[0].getText();
